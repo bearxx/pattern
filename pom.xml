@@ -28,6 +28,7 @@
 		<module>observer</module>
 		<module>decoration</module>
 		<module>factory</module>
+		<module>singleton</module>
 	</modules>
 
 	<build>
