@@ -27,6 +27,7 @@
 		<module>buildin</module>
 		<module>observer</module>
 		<module>decoration</module>
+		<module>factory</module>
 	</modules>
 
 	<build>
