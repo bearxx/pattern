@@ -29,6 +29,7 @@
 		<module>decoration</module>
 		<module>factory</module>
 		<module>singleton</module>
+		<module>command</module>
 	</modules>
 
 	<build>
