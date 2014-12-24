@@ -10,11 +10,21 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * A tool for multiple threads execution
+ * @author lmx
+ *
+ */
 public final class MultiThreadExecutor {
 	private static BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(20);
 	private static ExecutorService executor = new ThreadPoolExecutor(10, 20, 1L, TimeUnit.SECONDS, workQueue);
 	
-	public static <V> List<V> executeTask(List<GenerakTask<V>> tasks) {
+	/**
+	 * execute many tasks once
+	 * @param tasks : task list
+	 * @return result list
+	 */
+	public static <V> List<V> executeManyTasks(List<GenerakTask<V>> tasks) {
 		List<Future<V>> futures = new ArrayList<Future<V>>();
 		for(GenerakTask<V> task : tasks) {
 			futures.add(executor.submit(task));
@@ -28,5 +38,35 @@ public final class MultiThreadExecutor {
 			}
 		}
 		return result;
+	}
+	
+	/**
+	 * execute one task
+	 * @param task
+	 * @return one result
+	 */
+	public static <V> V executeOneTask(GenerakTask<V> task) {
+		Future<V> future = executor.submit(task);
+		V result = null;
+		try {
+			result = (future !=null ? future.get():null);
+		} catch (InterruptedException | ExecutionException e) {
+			e.printStackTrace();
+		}
+		return result ;
+	}
+
+	/**
+	 * shutdown all tasks except the current one
+	 */
+	public static void shutdown() {
+		executor.shutdown();
+	}
+	
+	/**
+	 * shutdown all tasks right now
+	 */
+	public static void shutdownNow() {
+		executor.shutdownNow();
 	}
 }
