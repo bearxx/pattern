@@ -1,12 +1,15 @@
 package command.main;
 
 import command.command.Command;
+import command.command.ConcreteProgramCommand;
 import command.command.FireCommand;
 import command.command.JumpCommand;
 import command.command.MoveCommand;
-import command.command.ConcreteProgramCommand;
+import command.command.ProgramCommand;
 import command.invoker.Invoker;
-import command.receiver.ProgramUp;
+import command.invoker.ProgramInvoker;
+import command.receiver.ProgramDownReceiver;
+import command.receiver.ProgramUpReceiver;
 import command.receiver.Soldier;
 import command.receiver.StrategyReceiver;
 
@@ -40,15 +43,25 @@ public class MainRun {
 		move.action();
 		jump.action();
 		fire.action();
+		
+		System.out.println("------------------------------------");
+		
 		// ****************** command pattern with strategy pattern ******************
-		ProgramInvoker invoker = new Invoker();
-		StrategyReceiver upReveiver = new ProgramUp();
-		StrategyReceiver downReveiver = new ProgramUp();
-		Command command = new ConcreteProgramCommand();
-		command.setProgramCommand(upReveiver);
+		ProgramInvoker invoker = new ProgramInvoker();
+		StrategyReceiver upReveiver = new ProgramUpReceiver();
+		StrategyReceiver downReveiver = new ProgramDownReceiver();
+		ProgramCommand command = new ConcreteProgramCommand();
+		command.setReciever(upReveiver);
 		invoker.setCommand(command);
 		
+		invoker.action();
+		invoker.action();
+		invoker.undo();
 		
+		command.setReciever(downReveiver);
+		invoker.setCommand(command);
+		invoker.action();
+		invoker.undo();
 
 	}
 

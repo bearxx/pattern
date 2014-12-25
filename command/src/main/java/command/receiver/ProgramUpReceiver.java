@@ -1,6 +1,6 @@
 package command.receiver;
 
-public class ProgramUp implements StrategyReceiver {
+public class ProgramUpReceiver implements StrategyReceiver {
 
 	@Override
 	public void execute() {

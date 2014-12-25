@@ -7,7 +7,7 @@ public class ConcreteProgramCommand implements ProgramCommand {
 	private StrategyReceiver reveiver;
 
 	@Override
-	public void setProgramCommand(StrategyReceiver reveiver) {
+	public void setReciever(StrategyReceiver reveiver) {
 		this.reveiver = reveiver;
 	}
 
