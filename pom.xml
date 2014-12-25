@@ -31,6 +31,7 @@
 		<module>singleton</module>
 		<module>command</module>
 		<module>adapter</module>
+		<module>template</module>
 	</modules>
 
 	<build>
