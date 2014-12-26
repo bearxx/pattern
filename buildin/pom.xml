@@ -61,11 +61,8 @@
 							</goals>
 							<configuration>
 								<sources>
-									<source>/home/lmx/workspace/pattern/strategy/src/main/java</source>
-									<source>/home/lmx/workspace/pattern/observer/src/main/java</source>
+									<source>../strategy/src/main/java</source>
 									<source>../observer/src/main/java</source>
-									<directory>../strategy/src/main/java</directory>
-									<source>src/main/java</source>
 								</sources>
 							</configuration>
 						</execution>

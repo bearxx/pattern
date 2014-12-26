@@ -8,10 +8,10 @@
 	</parent>
 	<artifactId>strategy</artifactId>
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.vlis</groupId>
 			<artifactId>buildin</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 </project>

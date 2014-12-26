@@ -7,11 +7,11 @@
   </parent>
   <artifactId>observer</artifactId>
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.vlis</groupId>
 			<artifactId>buildin</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 		<!-- <dependency>
 			<groupId>com.vlis</groupId>
 			<artifactId>strategy</artifactId>
