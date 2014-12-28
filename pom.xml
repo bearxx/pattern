@@ -33,6 +33,7 @@
 		<module>adapter</module>
 		<module>template</module>
     <module>composite</module>
+    <module>state</module>
   </modules>
 
 	<build>
